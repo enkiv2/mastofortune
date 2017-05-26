@@ -20,7 +20,10 @@ db=sys.argv[4]
 
 while True:
 	status=get_fortune(db)
-	print(status)
-	mastodon.status_post(status)
-	time.sleep(600)
+	#print(status)
+	try:
+		mastodon.status_post(status)
+		time.sleep(300)
+	except:
+		pass
 
